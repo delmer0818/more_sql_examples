@@ -1,0 +1,37 @@
+create view [dbo].[VNEWF_LU_ST_AP_ACCT_REGION]
+as select * from LU_ST_AP_ACCT_REGION;
+
+
+create view [dbo].[VNEWF_LU_ST_AP_ACCT_TYPE]
+as select * from LU_ST_AP_ACCT_TYPE;
+
+
+create view [dbo].[VNEWF_LU_ST_AP_ROW_STATUS]
+as select * from LU_ST_AP_ROW_STATUS;
+
+
+
+CREATE VIEW [dbo].[VNEWF_TLU_SR_SALESREP_ORG_LVL2]
+AS
+SELECT
+       L2.SALESREP_ORG2_LVL2_KEY                
+      ,L2.SALESREP_ORG2_LVL2_ID                 
+      ,L2.SALESREP_ORG2_LVL2_DESCR              
+      ,L2.SALESREP_ORG2_LVL2_ACTIVE_FLAG        
+      ,L2.PROMPT_FLAG
+      ,L2.SALESREP_ORG2_LVL2_SORT               
+      ,L2.SALESREP_ORG2_LVL1_KEY                
+      ,L2.SALESREP_ORG2_LVL1_ID                
+      ,L1.SALESREP_ORG2_LVL1_DESCR              
+      ,L2.CURRENT_FEED_FLAG
+      ,L2.DOWNLOAD_FLAG                   
+      ,L2.CREATE_DATE
+      ,L2.CREATE_USER_ID
+      ,L2.UPDATE_DATE
+      ,L2.UPDATE_USER_ID
+      ,L2.SOURCE_SYSTEM_ID
+FROM LU_CL_SALESREP_ORG2_LVL2 L2
+JOIN LU_CL_SALESREP_ORG2_LVL1 L1
+  ON L2.SALESREP_ORG2_LVL1_KEY = L1.SALESREP_ORG2_LVL1_KEY
+
+
